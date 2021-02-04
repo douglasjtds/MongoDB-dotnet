@@ -79,21 +79,38 @@ namespace projetoBlog.Controllers
             return View(model);
         }
 
-        //[HttpGet]
-        //public async Task<ActionResult> Publicacoes(string tag = null)
-        //{
-        //    return View(posts);
-        //}
+        [HttpGet]
+        public async Task<ActionResult> Publicacoes(string tag = null)
+        {
+            var conectandoMongoDb = new AcessoMongoDB();
+            var posts = new List<Publicacao>();
 
-        //[HttpPost]
-        //public async Task<ActionResult> NovoComentario(NovoComentarioModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return RedirectToAction("Publicacao", new { id = model.PublicacaoId });
+            if (tag == null)
+            {
+                var filtro = new BsonDocument();
+                posts = await conectandoMongoDb.Publicacoes.Find(filtro)
+                    .SortByDescending(x => x.DataCriacao).Limit(10).ToListAsync();
+            }
+            else
+            {
+                var construtor = Builders<Publicacao>.Filter;
+                var condicao = construtor.AnyEq(x => x.Tags, tag);
+                posts = await conectandoMongoDb.Publicacoes.Find(condicao)
+                    .SortByDescending(x => x.DataCriacao).Limit(10).ToListAsync();
+            }
 
-        //    // Inclua novo comentário na publicação já existente.
+            return View(posts);
+        }
 
-        //    return RedirectToAction("Publicacao", new { id = model.PublicacaoId });
-        //}
+        [HttpPost]
+        public async Task<ActionResult> NovoComentario(NovoComentarioModel model)
+        {
+            if (!ModelState.IsValid)
+                return RedirectToAction("Publicacao", new { id = model.PublicacaoId });
+
+            // Inclua novo comentário na publicação já existente.
+
+            return RedirectToAction("Publicacao", new { id = model.PublicacaoId });
+        }
     }
 }
