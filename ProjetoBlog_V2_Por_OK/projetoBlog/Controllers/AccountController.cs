@@ -34,9 +34,7 @@ namespace projetoBlog.Controllers
             }
 
             var conectandoMongoDb = new AcessoMongoDB();
-            var construtor = Builders<Usuario>.Filter;
-            var condicao = construtor.Eq(x => x.Email, model.Email);
-            var user = await conectandoMongoDb.Usuarios.Find(condicao).SingleOrDefaultAsync();
+            var user = await conectandoMongoDb.Usuarios.Find(x => x.Email == model.Email).SingleOrDefaultAsync();
 
             // Neste ponto iremos buscar o email digitado ao acessar o Blog
             // Descomentar as linhas abaixo

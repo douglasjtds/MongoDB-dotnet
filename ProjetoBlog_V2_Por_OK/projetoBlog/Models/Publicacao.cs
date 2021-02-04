@@ -12,7 +12,7 @@ namespace projetoBlog.Models
         public string Autor { get; set; }
         public string Titulo { get; set; }
         public string Conteudo { get; set; }
-        public List<string> Tags { get; set; }
+        public string[] Tags { get; set; }
         public DateTime DataCriacao { get; set; }
         public List<Comentario> Comentarios { get; set; }
 

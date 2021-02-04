@@ -32,8 +32,6 @@ namespace exemplosMongoDB
         public IMongoCollection<Livro> Livros
         {
             get { return _baseDeDados.GetCollection<Livro>(NOME_DA_COLECAO); }
-
-
         }
     }
 }

@@ -672,6 +672,8 @@ C:\Users\VVila\Google Drive\Surface\Docs\mongodb\CURSO_ONLINE\ProjetoBlog\Projet
 C:\Users\VVila\Google Drive\Surface\Docs\mongodb\CURSO_ONLINE\ProjetoBlog\ProjetoBlog_V2_Por_OK\projetoBlog\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\VVila\Google Drive\Surface\Docs\mongodb\CURSO_ONLINE\ProjetoBlog\ProjetoBlog_V2_Por_OK\projetoBlog\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\VVila\Google Drive\Surface\Docs\mongodb\CURSO_ONLINE\ProjetoBlog\ProjetoBlog_V2_Por_OK\projetoBlog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\obj\Debug\projetoBlog.csprojAssemblyReference.cache
+D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\obj\Debug\projetoBlog.csproj.CoreCompileInputs.cache
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\bin\mongocrypt.dll
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\bin\snappy32.dll
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\bin\snappy64.dll
@@ -850,8 +852,6 @@ D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\b
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\bin\Microsoft.Owin.Security.Google.xml
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\obj\Debug\projetoBlog.csprojAssemblyReference.cache
-D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\obj\Debug\projetoBlog.csproj.CoreCompileInputs.cache
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\obj\Debug\projetoBlog.csproj.CopyComplete
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\obj\Debug\projetoBlog.dll
 D:\Users\douglasjtds\Projects\MongoDB-dotnet\ProjetoBlog_V2_Por_OK\projetoBlog\obj\Debug\projetoBlog.pdb

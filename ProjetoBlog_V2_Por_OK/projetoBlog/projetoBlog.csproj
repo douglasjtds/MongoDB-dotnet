@@ -225,6 +225,10 @@
     <Compile Include="Models\Account\RegistrarModel.cs" />
     <Compile Include="Models\AcessoMongoDB.cs" />
     <Compile Include="Models\Comentario.cs" />
+    <Compile Include="Models\Home\IndexModel.cs" />
+    <Compile Include="Models\Home\NovaPublicacaoModel.cs" />
+    <Compile Include="Models\Home\NovoComentarioModel.cs" />
+    <Compile Include="Models\Home\PublicacaoModel.cs" />
     <Compile Include="Models\Publicacao.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -282,6 +286,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Registrar.cshtml" />
     <Content Include="Views\Account\Acessar.cshtml" />
+    <Content Include="Views\Home\NovaPublicacao.cshtml" />
+    <Content Include="Views\Home\Publicacao.cshtml" />
+    <Content Include="Views\Home\Publicacoes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
