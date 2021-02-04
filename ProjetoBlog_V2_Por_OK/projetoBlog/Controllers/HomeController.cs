@@ -109,6 +109,20 @@ namespace projetoBlog.Controllers
                 return RedirectToAction("Publicacao", new { id = model.PublicacaoId });
 
             // Inclua novo comentário na publicação já existente.
+            var comment = new Comentario()
+            {
+                Autor = User.Identity.Name,
+                Conteudo = model.Conteudo,
+                DataCriacao = DateTime.UtcNow
+            };
+
+            var conectandoMongoDb = new AcessoMongoDB();
+            var construtor = Builders<Publicacao>.Filter;
+            var condicao = construtor.Eq(x => x.Id, model.PublicacaoId);
+            var construtorAlteracao = Builders<Publicacao>.Update;
+            var condicaoAlteracao = construtorAlteracao.Push(x => x.Comentarios, comment);
+
+            await conectandoMongoDb.Publicacoes.UpdateOneAsync(condicao, condicaoAlteracao);
 
             return RedirectToAction("Publicacao", new { id = model.PublicacaoId });
         }
