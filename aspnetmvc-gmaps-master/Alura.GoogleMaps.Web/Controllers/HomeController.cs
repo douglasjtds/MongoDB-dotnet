@@ -1,5 +1,7 @@
 ﻿using Alura.GoogleMaps.Web.Geocoding;
 using Alura.GoogleMaps.Web.Models;
+using MongoDB.Driver;
+using MongoDB.Driver.GeoJsonObjectModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,9 +9,6 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.GeoJsonObjectModel;
 
 
 namespace Alura.GoogleMaps.Web.Controllers
