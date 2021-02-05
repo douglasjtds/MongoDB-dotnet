@@ -1,15 +1,15 @@
-﻿using Alura.GoogleMaps.Web.Models;
+﻿using Alura.GoogleMaps.Web.Geocoding;
+using Alura.GoogleMaps.Web.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Threading.Tasks;
-using System.Net.Http;
 using System.Net;
-using Newtonsoft.Json;
-using Alura.GoogleMaps.Web.Geocoding;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using MongoDB.Driver.GeoJsonObjectModel;
 
 
 namespace Alura.GoogleMaps.Web.Controllers
@@ -53,15 +53,37 @@ namespace Alura.GoogleMaps.Web.Controllers
             int distancia = model.Distancia * 1000;
 
             //Conecta MongoDB    
-           
-            //Configura o ponto atual no mapa           
-          
+            var conectandoMongoDb = new ConectandoMongoDbGeo();
+
+            //Configura o ponto atual no mapa      
+            var ponto = new GeoJson2DGeographicCoordinates(lon, lat);
+            var localizacao = new GeoJsonPoint<GeoJson2DGeographicCoordinates>(ponto);
+
             // filtro
-          
+            var construtor = Builders<Aeroporto>.Filter;
+            FilterDefinition<Aeroporto> filtroBuilder;
+
+
+            if (tipoAero == "")
+                filtroBuilder = construtor.NearSphere(x => x.Loc, localizacao, distancia);
+            else
+                filtroBuilder = construtor.NearSphere(x => x.Loc, localizacao, distancia)
+                    & construtor.Eq(x => x.Type, tipoAero);
+
+
             //Captura  a lista
-           
+            var listaAeroportos = await conectandoMongoDb.Airports.Find(filtroBuilder).ToListAsync();
+
             //Escreve os pontos
-                    
+            foreach (var doc in listaAeroportos)
+            {
+                var aero = new Coordenada(doc.Name,
+                    Convert.ToString(doc.Loc.Coordinates.Latitude).Replace(",", "."),
+                    Convert.ToString(doc.Loc.Coordinates.Longitude).Replace(",", "."));
+
+                aeroportosProximos.Add(aero);
+            }
+
             return Json(aeroportosProximos);
         }
 
